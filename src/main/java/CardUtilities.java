@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 class CardUtilities {
     private static final String REGEX_SPACE = " ";
 
-    public Card getHighestCard(final String hand) {
+    public Card highestCardFrom(final String hand) {
         final String[] cardStrings = hand.split(REGEX_SPACE);
         final List<Card> cards = convertToCard(cardStrings);
         Card highest = cards.get(0);
@@ -23,5 +24,27 @@ class CardUtilities {
             cardList.add(c);
         }
         return cardList;
+    }
+
+    public HandType highestHandTypeFrom(String hand) {
+        final String[] cardStrings = hand.split(REGEX_SPACE);
+        final List<Card> cards = convertToCard(cardStrings);
+        if (isPair(cards)) {
+            return HandType.PAIR;
+        }
+
+        return HandType.HIGH_CARD;
+    }
+
+    private boolean isPair(List<Card> cards) {
+        Collections.sort(cards);
+        for (Card card1 : cards) {
+            for (Card card2 : cards) {
+                if (!card1.equals(card2) && card1.getRank().equals(card2.getRank())) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
