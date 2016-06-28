@@ -19,10 +19,6 @@ enum CardRank {
         return value;
     }
 
-    public void setValue(String value) {
-        this.value = value;
-    }
-
     CardRank(String value) {
         this.value = value;
     }

@@ -5,7 +5,7 @@ import java.util.List;
 class CardUtilities {
     private static final String REGEX_SPACE = " ";
 
-    public Card highestCardFrom(final String hand) {
+    Card highestCardFrom(final String hand) {
         final String[] cardStrings = hand.split(REGEX_SPACE);
         final List<Card> cards = convertToCard(cardStrings);
         Card highest = cards.get(0);
@@ -26,7 +26,7 @@ class CardUtilities {
         return cardList;
     }
 
-    public HandType highestHandTypeFrom(String hand) {
+    HandType highestHandTypeFrom(String hand) {
         final String[] cardStrings = hand.split(REGEX_SPACE);
         final List<Card> cards = convertToCard(cardStrings);
         if (isPair(cards)) {

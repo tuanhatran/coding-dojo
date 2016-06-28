@@ -7,7 +7,7 @@ class PokerHands {
         this.cardUtilities = cardUtilities;
     }
 
-    public Result whoWin(final Player player1, final Player player2) {
+    Result whoWin(final Player player1, final Player player2) {
         final Result result;
         final HandType firstPlayerHandType = cardUtilities.highestHandTypeFrom(player1.getHand());
         final HandType secondPlayerHandType = cardUtilities.highestHandTypeFrom(player2.getHand());
