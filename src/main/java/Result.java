@@ -1,9 +1,15 @@
 import java.util.Optional;
 
 class Result {
-    private Player player;
-    private HandType type;
-    private Optional<Card> highestCard;
+    private final Player player;
+    private final HandType type;
+    private final Optional<Card> highestCard;
+
+    public Result(Player player, HandType type, Optional<Card> highestCard) {
+        this.player = player;
+        this.type = type;
+        this.highestCard = highestCard;
+    }
 
     public Player getPlayer() {
         return player;
@@ -13,15 +19,7 @@ class Result {
         return type;
     }
 
-    public void setType(HandType type) {
-        this.type = type;
-    }
-
     public Optional<Card> getHighestCard() {
         return highestCard;
-    }
-
-    public void setHighestCard(final Optional<Card> highestCard) {
-        this.highestCard = highestCard;
     }
 }

@@ -22,7 +22,7 @@ public class PokerHandsTest {
 
         assertThat(result.getPlayer(), is(player2));
         assertThat(result.getType(), is(HandType.HIGH_CARD));
-        assertThat(result.getHighestCard().get(), is(Card.ACE));
+        assertThat(result.getHighestCard().get(), is(new Card("H", CardRank.ACE)));
     }
 
 }
