@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Optional;
 
 class Result {
@@ -21,5 +22,24 @@ class Result {
 
     Optional<Card> getHighestCard() {
         return highestCard;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(player, type, highestCard);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        final Result other = (Result) obj;
+        return Objects.equals(this.player, other.player)
+                && Objects.equals(this.type, other.type)
+                && Objects.equals(this.highestCard, other.highestCard);
     }
 }

@@ -1,6 +1,6 @@
 class Card implements Comparable<Card> {
-    private final String suit; //A, C, D
-    private final CardRank rank; //1, 2, 3
+    private final String suit;
+    private final CardRank rank;
 
     public Card(final String suit, final CardRank rank) {
         this.suit = suit;
